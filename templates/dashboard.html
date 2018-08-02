@@ -1,0 +1,38 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<div role="tabpanel">
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#products" aria-controls="products" role="tab" data-toggle="tab">Products</a></li>
+    <li role="presentation"><a href="#order" aria-controls="order" role="tab" data-toggle="tab">Order</a></li>
+
+  </ul>
+
+  <!-- Tab panes -->
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane fade in active" id="products">
+     <br>
+	<ul>
+           {% for t in TOPIC_DICT["Products"] %}
+	     <li><a href="{{t[1]}}">{{t[0]}}</a></li>
+	   {% endfor %}
+	</ul>
+  </div>
+  
+  <div role="tabpanel" class="tab-pane fade" id="order">
+     <br>
+        <ul>
+           {% for t in TOPIC_DICT["Order"] %}
+             <li><a href="{{t[1]}}">{{t[0]}}</a></li>
+           {% endfor %}
+        </ul>
+  </div>
+
+</div>
+
+</div>
+
+{% endblock body %}
