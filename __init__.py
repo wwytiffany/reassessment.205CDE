@@ -106,7 +106,8 @@ def login_page():
                 return redirect(url_for("dashboard"))
 
             else:
-                error = "Invalid credentials(1), try again."
+                #error = "Invalid credentials(1), try again."
+                error = "Password is not correct, try again."
 
         c.close()
         conn.close()
@@ -116,7 +117,8 @@ def login_page():
 
     except Exception as e:
         #flash(e)
-        error = "Invalid credentials(2), try again."
+        #error = "Invalid credentials(2), try again."
+        error = "User does not exist, please signup first."
         return render_template("login.html", error = error)  
 		
 
